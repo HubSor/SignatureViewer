@@ -52,17 +52,37 @@ namespace SignatureRetriever
         {
             var mail = LoginBox.Text;
             var passwd = PasswordBox.Text;
+            if (mail == null || passwd == null)
+            {
+                ResultBrowser.DocumentText = "Mail or password was not given.";
+                return;
+            }
+            GetExchangeSignature(mail, passwd);
+        }
 
+        private void GetExchangeSignature(string mail, string password)
+        {
             ExchangeService service = new ExchangeService(ExchangeVersion.Exchange2013_SP1);
-            service.Credentials = new WebCredentials(mail, passwd);
+            service.Credentials = new WebCredentials(mail, password);
             service.AutodiscoverUrl(mail, RedirectionUrlValidationCallback);
             var owaConfig = UserConfiguration.Bind(service, "OWA.UserOptions", WellKnownFolderName.Root, UserConfigurationProperties.All);
+            if (owaConfig == null)
+            {
+                ResultBrowser.DocumentText = "Connection error. Verify your credentials and internet connection.";
+                return;
+            }
             if (owaConfig.Dictionary.ContainsKey("signaturehtml"))
             {
                 var signature = owaConfig.Dictionary["signaturehtml"];
                 ResultBrowser.DocumentText = signature.ToString();
+                return;
             }
-            else ResultBrowser.DocumentText = "No niestety";
+            else 
+            {
+                ResultBrowser.DocumentText = "No signature found, make sure it's set at Exchange Admin Center.";
+                return;
+            }
+            
         }
     }
 }
