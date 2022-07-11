@@ -12,10 +12,7 @@ namespace SignatureRetriever
             InitializeComponent();
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private static bool RedirectionUrlValidationCallback(string redirectionUrl)
         {

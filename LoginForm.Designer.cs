@@ -40,14 +40,14 @@
             // 
             // LoginBox
             // 
-            this.LoginBox.Location = new System.Drawing.Point(65, 36);
+            this.LoginBox.Location = new System.Drawing.Point(152, 36);
             this.LoginBox.Name = "LoginBox";
             this.LoginBox.Size = new System.Drawing.Size(276, 20);
             this.LoginBox.TabIndex = 1;
             // 
             // PasswordBox
             // 
-            this.PasswordBox.Location = new System.Drawing.Point(65, 62);
+            this.PasswordBox.Location = new System.Drawing.Point(152, 62);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.PasswordChar = '*';
             this.PasswordBox.Size = new System.Drawing.Size(276, 20);
@@ -56,7 +56,7 @@
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(6, 65);
+            this.PasswordLabel.Location = new System.Drawing.Point(93, 65);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(53, 13);
             this.PasswordLabel.TabIndex = 3;
@@ -65,7 +65,7 @@
             // LoginLabel
             // 
             this.LoginLabel.AutoSize = true;
-            this.LoginLabel.Location = new System.Drawing.Point(6, 39);
+            this.LoginLabel.Location = new System.Drawing.Point(93, 39);
             this.LoginLabel.Name = "LoginLabel";
             this.LoginLabel.Size = new System.Drawing.Size(26, 13);
             this.LoginLabel.TabIndex = 4;
@@ -73,15 +73,15 @@
             // 
             // ResultBrowser
             // 
-            this.ResultBrowser.Location = new System.Drawing.Point(18, 117);
+            this.ResultBrowser.Location = new System.Drawing.Point(12, 117);
             this.ResultBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.ResultBrowser.Name = "ResultBrowser";
-            this.ResultBrowser.Size = new System.Drawing.Size(323, 440);
+            this.ResultBrowser.Size = new System.Drawing.Size(549, 440);
             this.ResultBrowser.TabIndex = 5;
             // 
             // ConnectButton
             // 
-            this.ConnectButton.Location = new System.Drawing.Point(139, 88);
+            this.ConnectButton.Location = new System.Drawing.Point(152, 89);
             this.ConnectButton.Name = "ConnectButton";
             this.ConnectButton.Size = new System.Drawing.Size(80, 23);
             this.ConnectButton.TabIndex = 6;
@@ -93,7 +93,7 @@
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.TitleLabel.Location = new System.Drawing.Point(12, 9);
+            this.TitleLabel.Location = new System.Drawing.Point(128, 9);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(329, 24);
             this.TitleLabel.TabIndex = 7;
@@ -101,7 +101,7 @@
             // 
             // GetLocalButton
             // 
-            this.GetLocalButton.Location = new System.Drawing.Point(266, 88);
+            this.GetLocalButton.Location = new System.Drawing.Point(353, 88);
             this.GetLocalButton.Name = "GetLocalButton";
             this.GetLocalButton.Size = new System.Drawing.Size(75, 23);
             this.GetLocalButton.TabIndex = 8;
@@ -112,7 +112,7 @@
             // LoginForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(350, 585);
+            this.ClientSize = new System.Drawing.Size(573, 586);
             this.Controls.Add(this.GetLocalButton);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.ConnectButton);
@@ -126,7 +126,6 @@
             this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.Text = "SignatureViewer";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
