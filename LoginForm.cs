@@ -10,9 +10,8 @@ namespace SignatureRetriever
         public LoginForm()
         {
             InitializeComponent();
+            ResultBrowser.DocumentText = "Email signature or error message will be displayed here.";
         }
-
-
 
         private static bool RedirectionUrlValidationCallback(string redirectionUrl)
         {
@@ -30,7 +29,7 @@ namespace SignatureRetriever
         }
 
         private void ConnectButton_Click(object sender, EventArgs e)
-        {
+        {  
             var mail = LoginBox.Text.Trim();
             var passwd = PasswordBox.Text.Trim();
 
@@ -40,6 +39,12 @@ namespace SignatureRetriever
                 return;
             }
 
+            if (mail.Length >= 256)
+            {
+                ResultBrowser.DocumentText = "Mail address is too long.";
+                return;
+            }
+            
             GetExchangeSignature(mail, passwd);
         }
 
