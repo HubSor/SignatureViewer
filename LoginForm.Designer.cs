@@ -35,6 +35,7 @@
             this.ResultBrowser = new System.Windows.Forms.WebBrowser();
             this.ConnectButton = new System.Windows.Forms.Button();
             this.TitleLabel = new System.Windows.Forms.Label();
+            this.GetLocalButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LoginBox
@@ -99,11 +100,22 @@
             this.TitleLabel.TabIndex = 7;
             this.TitleLabel.Text = "Pass credentials to get email signature";
             // 
+            // GetLocalButton
+            // 
+            this.GetLocalButton.Location = new System.Drawing.Point(266, 88);
+            this.GetLocalButton.Name = "GetLocalButton";
+            this.GetLocalButton.Size = new System.Drawing.Size(75, 23);
+            this.GetLocalButton.TabIndex = 8;
+            this.GetLocalButton.Text = "Get Local";
+            this.GetLocalButton.UseVisualStyleBackColor = true;
+            this.GetLocalButton.Click += new System.EventHandler(this.GetLocalButton_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 585);
+            this.Controls.Add(this.GetLocalButton);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.ConnectButton);
             this.Controls.Add(this.PasswordBox);
@@ -128,6 +140,7 @@
         private System.Windows.Forms.Button ConnectButton;
         private System.Windows.Forms.Label TitleLabel;
         public System.Windows.Forms.WebBrowser ResultBrowser;
+        private System.Windows.Forms.Button GetLocalButton;
     }
 }
 
