@@ -33,21 +33,6 @@ namespace SignatureRetriever
             return result;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoginBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ConnectButton_Click(object sender, EventArgs e)
         {
             var mail = LoginBox.Text;

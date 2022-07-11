@@ -43,12 +43,12 @@
             this.LoginBox.Name = "LoginBox";
             this.LoginBox.Size = new System.Drawing.Size(276, 20);
             this.LoginBox.TabIndex = 1;
-            this.LoginBox.TextChanged += new System.EventHandler(this.LoginBox_TextChanged);
             // 
             // PasswordBox
             // 
             this.PasswordBox.Location = new System.Drawing.Point(65, 62);
             this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.PasswordChar = '*';
             this.PasswordBox.Size = new System.Drawing.Size(276, 20);
             this.PasswordBox.TabIndex = 2;
             // 
@@ -69,7 +69,6 @@
             this.LoginLabel.Size = new System.Drawing.Size(26, 13);
             this.LoginLabel.TabIndex = 4;
             this.LoginLabel.Text = "Mail";
-            this.LoginLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // ResultBrowser
             // 
@@ -114,7 +113,6 @@
             this.Controls.Add(this.LoginBox);
             this.Name = "LoginForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
