@@ -18,6 +18,11 @@ namespace SignatureRetriever
             InitializeComponent();
         }
 
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private static bool RedirectionUrlValidationCallback(string redirectionUrl)
         {
             // The default for the validation callback is to reject the URL.
@@ -35,9 +40,9 @@ namespace SignatureRetriever
 
         private void ConnectButton_Click(object sender, EventArgs e)
         {
-            var mail = LoginBox.Text;
-            var passwd = PasswordBox.Text;
-            if (mail == null || passwd == null)
+            var mail = LoginBox.Text.Trim();
+            var passwd = PasswordBox.Text.Trim();
+            if (mail == "" || passwd == "")
             {
                 ResultBrowser.DocumentText = "Mail or password was not given.";
                 return;
@@ -49,11 +54,24 @@ namespace SignatureRetriever
         {
             ExchangeService service = new ExchangeService(ExchangeVersion.Exchange2013_SP1);
             service.Credentials = new WebCredentials(mail, password);
-            service.AutodiscoverUrl(mail, RedirectionUrlValidationCallback);
+            try
+            {
+                service.AutodiscoverUrl(mail, RedirectionUrlValidationCallback);
+            }
+            catch (AutodiscoverLocalException)
+            {
+                ResultBrowser.DocumentText = "Connection error. Verify your credentials and internet connection.";
+                return;
+            }
+            catch (FormatException)
+            {
+                ResultBrowser.DocumentText = "Email is of incorrect format.";
+                return;
+            }
             var owaConfig = UserConfiguration.Bind(service, "OWA.UserOptions", WellKnownFolderName.Root, UserConfigurationProperties.All);
             if (owaConfig == null)
             {
-                ResultBrowser.DocumentText = "Connection error. Verify your credentials and internet connection.";
+                ResultBrowser.DocumentText = "Connection error. Could not access user's configuration.";
                 return;
             }
             if (owaConfig.Dictionary.ContainsKey("signaturehtml"))
@@ -67,7 +85,6 @@ namespace SignatureRetriever
                 ResultBrowser.DocumentText = "No signature found, make sure it's set at Exchange Admin Center.";
                 return;
             }
-            
         }
     }
 }

@@ -112,7 +112,8 @@
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.LoginBox);
             this.Name = "LoginForm";
-            this.Text = "Form1";
+            this.Text = "SignatureViewer";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,9 +125,9 @@
         private System.Windows.Forms.TextBox PasswordBox;
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.Label LoginLabel;
-        private System.Windows.Forms.WebBrowser ResultBrowser;
         private System.Windows.Forms.Button ConnectButton;
         private System.Windows.Forms.Label TitleLabel;
+        public System.Windows.Forms.WebBrowser ResultBrowser;
     }
 }
 
