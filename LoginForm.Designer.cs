@@ -81,7 +81,6 @@
             // 
             // ConnectButton
             // 
-            this.ConnectButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ConnectButton.Location = new System.Drawing.Point(139, 88);
             this.ConnectButton.Name = "ConnectButton";
             this.ConnectButton.Size = new System.Drawing.Size(80, 23);
@@ -112,8 +111,7 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(350, 585);
             this.Controls.Add(this.GetLocalButton);
             this.Controls.Add(this.TitleLabel);
@@ -123,6 +121,9 @@
             this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.LoginBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.Text = "SignatureViewer";
             this.Load += new System.EventHandler(this.LoginForm_Load);
