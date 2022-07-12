@@ -30,6 +30,8 @@ Mo¿na by dodaæ jak¹œ sensown¹ ikonkê lub animacjê podczas ³¹czenia siê do skrzyn
 
 Przy du¿ej rozbudowie tej aplikacji potrzebna by by³a porz¹dna i rzetelna dokumentacja.
 
+Dla darmowej wersji biblioteki Redemption za ka¿dym uruchomieniem programu wyœwietla siê okienko informacyjne. Mo¿na zrezygnowaæ z mo¿liwoœci ogl¹danie stopek z lokalnej maszyny, co uproœci program lub kupiæ pe³n¹ wersjê.
+
 ### Pod wzglêdem obs³ugi b³êdów
 
 System logowania zostawiaj¹cy logi o ka¿dej akcji podjêtej przez program. Potencjalnie przydatne przy programie pozwalaj¹cym podejrzeæ czyjeœ dane (nawet tak trywialne jak stopka mailowa).
